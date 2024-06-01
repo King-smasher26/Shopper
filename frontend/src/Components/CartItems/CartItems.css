@@ -34,7 +34,9 @@
 
 .carticon-product-icon{
     height: 62px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cartitems-remove-icon{
@@ -100,4 +102,38 @@
     border: 1px solid black;
     outline: none;
     border-radius: 8px;
+}
+
+@media screen and (max-width: 900px) {
+    .cartitems{
+        width: 100%;
+    }
+
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .cartitems{
+        width: 80%;
+    }
+
+    .cartitems-format-main{
+        grid-template-columns: 1fr;
+        gap: 0.3rem;
+    }
+
+    .carticon-product-icon{
+        width: auto;
+        width:80%;
+        height: auto;
+        margin: auto;
+        align-items: bottom;
+    }
+
+    .cartitems-quantity, .removeBtn{
+        margin: auto;
+    }
+
+
 }

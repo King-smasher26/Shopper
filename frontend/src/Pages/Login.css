@@ -79,3 +79,27 @@
     position: relative;
 }
 
+@media screen and (max-width: 1500px) {
+    .loginsignup-container{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .loginsignup-container{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .loginsignup-container{
+        width: 60%;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .loginsignup-container{
+        width: 90%;
+    }
+}

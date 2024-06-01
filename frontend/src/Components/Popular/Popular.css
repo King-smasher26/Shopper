@@ -71,8 +71,12 @@
     .popular-heading h1 {
         font-size: 2rem;
     }
-    .popular-dash hr {
-        display: none
+    .popular-dash{
+        display: none;
+
+        & hr{
+            display: none;
+        }
     }
 }
 
@@ -90,6 +94,8 @@
         height: auto;
     }
 }
+
+
 
 
 /** =========================================  End for the Responsive Code  ========================================== */

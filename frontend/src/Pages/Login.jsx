@@ -4,7 +4,7 @@ import { useState } from 'react'
 import axios from 'axios'
 const Login = (props) => {
   const changeBackground={
-    backgroundColor : (props.mode === "black")?"black":"white",
+    backgroundColor : (props.mode === "black")?"#3A3B3C":"white",
   }
 
   const changeColor={

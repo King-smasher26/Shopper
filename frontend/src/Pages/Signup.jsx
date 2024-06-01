@@ -5,7 +5,7 @@ import { useState } from 'react'
 import axios from 'axios'
 const Signup = (props) => {
   const changeBackground = {
-    backgroundColor : (props.mode==="black")?"black":"white",
+    backgroundColor : (props.mode==="black")?"#212124":"white",
   }
 
   const changeColor={
@@ -39,7 +39,7 @@ const Signup = (props) => {
   return (
     <div>
       
-      <div className="signupPage" style={{backgroundColor : (props.mode==="black")?"#5e0567":"#fce3fe"}}>
+      <div className="signupPage" style={{backgroundColor : (props.mode==="black")?"#404040":"#fce3fe"}}>
         <div className="signupPage-container" style={changeBackground}>
           <h1 style={changeColor}>Sign Up</h1>
           <div className="signupPage-fields">

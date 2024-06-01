@@ -99,7 +99,7 @@
 
 @media screen and (max-width: 620px) {
     .newsletter_box_heading{
-        font-size: 2rem;
+        font-size: 25px;
     }
     .newsletter_box_email button {
         font-size: small;
