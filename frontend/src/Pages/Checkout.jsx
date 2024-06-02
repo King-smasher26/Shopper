@@ -24,6 +24,7 @@ const Checkout = () => {
     const placeOrder = () => {
         {console.log(getTotalCartItems())}
         {console.log(cartInfoSection())}
+     
 
         if (formFields.name === "" || formFields.address === "" || formFields.pincode === "" || formFields.phoneNumber === "") {
             alert("All fields Required");

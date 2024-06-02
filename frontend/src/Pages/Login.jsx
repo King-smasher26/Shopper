@@ -31,6 +31,10 @@ const Login = (props) => {
           });
       }
 
+
+
+
+
   return (
     <div>
          <div>
@@ -42,10 +46,11 @@ const Login = (props) => {
 
           <div className="loginsignup-fields">
           {/* <input type="text" placeholder='Your Name' /> */}
-          <input type='email' placeholder='Email Address' onChange={(e)=>setEmail(e.target.value)}/>
-          <input type="password" placeholder='Password' onChange={(e)=>setPassword(e.target.value)}/>
+          <input type='email' id="#email" placeholder='Email Address' onChange={(e)=>setEmail(e.target.value)}/>
+          <input type="password" id="password" placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}}/>
           </div>
 
+          {}
           <button onClick={sendUserData}>Continue</button>
 
           <div className="loginsignup-agree">

@@ -3,6 +3,7 @@
     height: auto;
     display: grid;
     grid-template-columns: 1fr 2fr;
+    justify-content: center;
     gap: 4rem;
     margin: 4rem auto;
     /* background-color: #4582ec; */

@@ -32,6 +32,7 @@ const CartItems = (props) => {
 
         <div className="cartitems-format-main cartitems_heading" style={{color : (props.mode)==="black"?"yellow":"black"}}>
         {console.log(cartInfoSection())}
+        {/* {console.log(window.location.p)} */}
             <p>Products</p>
             <p>Title</p>
             <p>Size</p>

@@ -14,15 +14,19 @@ import women_banner from "./Components/Images/banner_women.png";
 import kid_banner from "./Components/Images/banner_kids.png";
 import Checkout from "./Pages/Checkout";
 
+
 import { AnalysisChart } from "./Pages/AnalysisChart";
 const App = () => {
   const [modes, setModes] = useState("white");
+  const [pathName, setPathName] = useState();
 
   // const getModeFunction=(mode)=>{
   //   console.log(mode);
   //   setModes(mode);
   //   console.log(modes);
   // }
+
+
 
   const toggleMode=(mode)=>{
     if(mode === "black"){
@@ -39,7 +43,8 @@ const App = () => {
   return (
    <>
    <Router>
-    <Navbar toggleMode={toggleMode}/>                                {/* By this Navbar is available in all the component  */}
+<Navbar toggleMode={toggleMode}/>                            {/* By this Navbar is available in all the component  */}
+
     <Routes>
       <Route path="/" element={<Shop mode={modes}/>} />
       <Route path="/mens" element={<ShopCategory banner={men_banner} category="Mens" mode={modes}/>} />

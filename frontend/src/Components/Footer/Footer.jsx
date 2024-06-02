@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Footer.css" 
 import logo from "../Images/logo.png"
+import { useLocation } from 'react-router-dom'
  
 
 const Footer = (props) => {
@@ -8,10 +9,15 @@ const Footer = (props) => {
     const changeTheme = {
         color : (props.mode === "black")?"white":"",
     }
+
+    if(useLocation().pathname === "/cart"){
+        return null;
+    }
+    
   return (
     <>
 
-    <div className="footer" style={changeTheme}>
+        <div className="footer" style={changeTheme}>
 
         <div className="panel">
             <div className="panel_upper">

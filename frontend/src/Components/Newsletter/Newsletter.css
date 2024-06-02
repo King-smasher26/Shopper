@@ -85,6 +85,8 @@
     }
     .newsletter_box_email button {
         width: 15%;
+        background: red;
+        color: white;
     }
 }
 
@@ -93,7 +95,10 @@
         font-size: 2rem;
     }
     .newsletter_box_email button {
-        font-size: small;
+        width: 20%;
+        font-size: medium;
+        background: red;
+        color: white;
     }
 }
 
@@ -103,8 +108,10 @@
     }
     .newsletter_box_email button {
         font-size: small;
-        width: 40%;
+        width: 30%;
         height: 30%;
+        background: red;
+        color: white;
     }
 
     .newsletter_box_email{

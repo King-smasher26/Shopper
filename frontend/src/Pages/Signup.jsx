@@ -36,6 +36,27 @@ const Signup = (props) => {
           });
       }
 
+
+      const validateEmail = (email) => {
+        console.log(email.slice(-7))
+          if(email.slice(-4) === ".com" || email.slice(-7) === ".org.in" || email.slice(-4) === ".net" || false ){
+            console.log("Correct Email Address")
+          }
+          else{
+            alert("Please Enter The Valid Email Address")
+          }
+          
+          const emailPattern =  
+          /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          const isValid = emailPattern.test(email); 
+
+          if(isValid === false){
+            alert("Please Enter the Valid Email Address");
+          }
+      };
+
+
+      {console.log(email)}
   return (
     <div>
       
@@ -45,7 +66,7 @@ const Signup = (props) => {
           <div className="signupPage-fields">
           <input type="text" placeholder='Your Name' onChange={(e)=>setName(e.target.value)}/>
           <input type='email' placeholder='Email Address' onChange={(e)=>setEmail(e.target.value)}/>
-          <input type="password" placeholder='Password' onChange={(e)=>setPassword(e.target.value)}/>
+          <input type="password" placeholder='Password' onChange={(e)=>{setPassword(e.target.value);  validateEmail(email)}}/>
           </div>
 
           <button onClick={()=>{

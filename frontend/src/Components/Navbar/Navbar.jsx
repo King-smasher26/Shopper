@@ -7,6 +7,7 @@ import { ShopContext } from '../../Context/ShopContext'
 import DarkModeIcon from '@mui/icons-material/DarkMode'; 
 import { IoCartSharp } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useLocation } from 'react-router-dom'
 
 
 
@@ -30,6 +31,9 @@ const Navbar = (props) => {
   //   }
   // }
 
+  if(useLocation().pathname === "/cart"){
+    return null;
+  }
 
 
   return (
@@ -54,8 +58,10 @@ const Navbar = (props) => {
           <Link to="/signup">  <button style={{backgroundColor : (mode==="white")?"yellow":"white"}}>LOG IN</button>  </Link>          {/*  //changes done yesterday */}
           <Link to="/cart"> <IoCartSharp style={{color : (mode==="white")?"yellow":"black", fontSize : "1.5rem"}} />  </Link>
           <div className="nav-cart-count" > {cartArrayLength()} </div>
+        </div>
 
-          <DarkModeIcon onClick={()=>{
+        <div className="nav_last_icon" style={{display: "flex", gap : "1rem"}}>
+        <DarkModeIcon onClick={()=>{
             if(mode === "black"){
               setMode("white");
               props.toggleMode(mode);
@@ -66,11 +72,12 @@ const Navbar = (props) => {
             }
           }} style={{color : (mode==="white")?"yellow":"black"}}></DarkModeIcon>
           
-        </div>
 
         <div className="hamburgerMenu">
-            <GiHamburgerMenu /> 
+            <GiHamburgerMenu style={{color : (mode==="black")?"black":"yellow"}}/>:
         </div>
+        </div>
+         
     </div>
     
     </>
