@@ -1,0 +1,184 @@
+
+.navbar{
+    max-width: 2160px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 1px 3px -2px;
+    background-color: white;
+}
+
+
+.nav-logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+
+
+.nav-logo p{
+    color: #171717;
+    font-size: 1.5rem;
+    font-weight: 600; 
+    margin-top: 3vh;
+    
+}
+
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 3.125rem;
+    color: #626262;
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+.nav-menu li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    cursor: pointer;
+}
+
+.borderBottom{
+    border-bottom: 2px solid red;
+}
+
+
+.nav-login-cart{
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.nav-login-cart button{
+    width: auto;                       /* changes done yesterday */
+    height: auto;                      /* changes done yesterday  */
+    padding: 0.8rem 2rem;
+    outline: none;
+    border: 1px solid #7a7a7a;
+    border-radius: 75px;
+    color: #515151;
+    font-size: 0.78rem;                  
+    font-weight: 500;                    /* changes done yesterday  */
+    background-color: white;
+    cursor: pointer;
+}
+
+
+
+.nav-login-cart button:active{
+    background-color: #f3f3f3;
+}
+
+.nav-cart-count{
+    width: 14px;                             /* changes done yesterday  */
+    height: 14px;                             /* changes done yesterday  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -24px;                        /* changes done yesterday  */
+    margin-left: -52px;                        /* changes done yesterday  */
+    border-radius: 7px;                           /* changes done yesterday  */
+    font-size: 12px;                              /* changes done yesterday  */
+    background-color: red;
+    color: white;
+}
+
+.hamburgerMenu{
+    display: none;
+}
+
+.resp_nav{
+    display: none;
+    width: 100%;
+    height: auto;
+    /* padding: 2rem 0; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: 2rem; */
+    list-style : none;
+    font-size: large;
+    border-bottom: 3px solid black;
+    /* margin-bottom: 3rem; */
+
+    & .link{
+        text-decoration: none;
+    }
+
+    & li{
+        /* background: red; */
+    width: 100vw;
+    padding: 1.2rem;
+    display: grid;
+    /* border: 2px solid black; */
+    place-items: center;
+    border-collapse: separate;
+    border-bottom: 0;
+    }
+}
+
+.resp_nav li:hover{
+    background-color: grey;
+    color: black;
+}
+
+/** ========================================  Start for the Responsive Code  ========================================= */
+
+@media screen and (max-width: 1360px) {
+    .nav-login-cart button {
+        width: auto;
+        height: auto;
+        padding: 0.6rem 0.7rem;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .hamburgerMenu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-login-cart {
+        display: none;
+    }
+
+    .navbar {
+        justify-content: space-between;
+        padding: 0 3rem;
+    }
+}
+
+
+@media screen and (max-width: 920px) {
+    .nav-login-cart button {
+        width: auto;
+        height: auto;
+        padding: 0.6rem 0.7rem;
+    }
+
+    .navbar{
+        padding: 0 1.5rem;
+    }
+    
+}
+
+
+
+
+/** =========================================  End for the Responsive Code  ========================================== */
+
+

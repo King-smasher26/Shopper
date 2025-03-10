@@ -1,0 +1,273 @@
+.products-content {
+    padding: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-icon {
+    font-size: 32px !important;
+    margin-right: 16px;
+    color: #1976d2;
+  }
+  
+  .header-actions {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .products-info {
+    margin-bottom: 16px;
+    color: #666;
+  }
+  
+  .products-table-container {
+    overflow-x: auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
+  
+  .products-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .products-table th,
+  .products-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .products-table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    color: #444;
+  }
+  
+  .products-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .products-table tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .stock-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 16px;
+    font-weight: 500;
+    text-align: center;
+    min-width: 40px;
+  }
+  
+  .critical-stock {
+    background-color: #ffcdd2;
+    color: #c62828;
+  }
+  
+  .low-stock {
+    background-color: #fff9c4;
+    color: #f57f17;
+  }
+  
+  .normal-stock {
+    background-color: #c8e6c9;
+    color: #2e7d32;
+  }
+  
+  .high-stock {
+    background-color: #bbdefb;
+    color: #1565c0;
+  }
+  
+  .actions-cell {
+    white-space: nowrap;
+    width: 100px;
+  }
+  
+  .error-message {
+    display: flex;
+    align-items: center;
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  
+  .error-message svg {
+    margin-right: 8px;
+  }
+  
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 0;
+    color: #666;
+  }
+  
+  .loading-container p {
+    margin-top: 16px;
+  }
+  
+  .no-data {
+    text-align: center;
+    color: #666;
+    padding: 32px 16px !important;
+  }
+  
+  /* Product specific styles */
+  .product-img-container {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .product-thumbnail {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  .product-name {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .discount-badge {
+    background-color: #d32f2f;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  .price-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .current-price {
+    font-weight: 500;
+    color: #2e7d32;
+  }
+  
+  .original-price {
+    font-size: 12px;
+    color: #757575;
+    text-decoration: line-through;
+  }
+  
+  .sizes-container {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  
+  .size-chip {
+    background-color: #e0e0e0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+  
+  .tags-container {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  
+  .tag-chip {
+    background-color: #f0f7ff !important;
+  }
+  
+  /* Form styles */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 8px;
+  }
+  
+  .full-width-field {
+    grid-column: span 2;
+  }
+  
+  .chip-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  
+  .form-chip {
+    margin: 2px;
+  }
+  
+  .image-preview {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .preview-image {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: contain;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 8px;
+    margin-top: 8px;
+  }
+  
+  @media (max-width: 1024px) {
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .full-width-field {
+      grid-column: span 1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .products-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .header-actions {
+      margin-top: 16px;
+      width: 100%;
+    }
+    
+    .header-actions button {
+      flex: 1;
+    }
+  }

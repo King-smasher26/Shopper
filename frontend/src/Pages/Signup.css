@@ -1,0 +1,107 @@
+*{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.signupPage{
+    width: 100%;
+    height: 90vh;
+    background-color: #fce3fe;
+    /* background-color: #121212 */
+    display: flex;
+    justify-content: center;
+}
+
+
+.signupPage-container{
+    width: 30%;
+    height: 80%;
+    background-color: white;
+    margin: auto;
+    padding: 10px 13px;
+    border-radius: 12px;
+}
+
+
+.signupPage-container h1{
+    width: 100%;
+    text-align: center;
+    font-size: large;
+    font-weight: 500;
+    margin: 2vh 0px;
+}
+
+
+.signupPage-fields{
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.signupPage-fields input{
+    height: 41px;
+    width: 100%;
+    padding-left: 20px;
+    border: 1px solid #c9c9c9;
+    outline: none;
+    color: #5c5c5c;
+    font-size: small;
+}
+
+
+.signupPage-container button{
+    height: 41px;
+    width: 100%;
+    /* padding-left: 20px; */
+    border: 1px solid #c9c9c9;
+    outline: none;
+    background-color: red;
+    color: white;
+    font-size: small;
+    margin: 3vh 0px;
+}
+
+
+.signupPage-login{
+    font-size: small;
+}
+
+.signupPage-login span{
+    color: red;
+    font-weight: 600;
+}
+
+
+.signupPage-agree{
+    display: flex;
+    align-items: center;
+    font-size: small;
+    position: relative;
+    margin-top: 1.8rem;
+}
+
+@media screen and (max-width: 1500px) {
+    .signupPage-container{
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .signupPage-container{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .signupPage-container{
+        width: 60%;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .signupPage-container{
+        width: 80%;
+    }
+}

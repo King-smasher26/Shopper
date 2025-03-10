@@ -1,0 +1,28 @@
+.breadcrum{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    /* background-color: rebeccapurple; */
+}
+
+.breadcrum_inner{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    /* background-color: blue; */
+}
+
+@media screen and (max-width: 600px) {
+    .breadcrum_inner{
+        width: 100%;
+        justify-content: center;
+        gap: 0.4rem;
+    }
+}

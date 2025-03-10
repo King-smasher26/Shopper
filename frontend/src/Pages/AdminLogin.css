@@ -1,0 +1,105 @@
+*{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+ .loginsignup{                                               /* This page is also created yesterday  */
+    width: 100%;
+    height: 85vh;
+    background-color: #829bff;
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+.loginsignup-container{
+    width: 30%;
+    height: 80%;
+    background-color: white;
+    margin: auto;
+    padding: 10px 13px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+
+.loginsignup-container h1{
+    font-size: large;
+    font-weight: 500;
+    margin: 6vh 0px;
+}
+
+
+.loginsignup-fields{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.loginsignup-fields input{
+    height: 41px;
+    width: 100%;
+    padding-left: 20px;
+    border: 1px solid #c9c9c9;
+    outline: none;
+    color: #5c5c5c;
+    font-size: small;
+}
+
+
+.loginsignup-container button{
+    height: 41px;
+    width: 100%;
+    /* padding-left: 20px; */
+    border: 1px solid #c9c9c9;
+    outline: none;
+    background-color: red;
+    color: white;
+    font-size: small;
+    margin: 3vh 0px;
+}
+
+
+.loginsignup-login{
+    font-size: small;
+}
+
+.loginsignup-login span{
+    color: red;
+    font-weight: 600;
+}
+
+
+.loginsignup-agree{
+    display: flex;
+    align-items: center;
+    font-size: small;
+    position: relative;
+}
+
+@media screen and (max-width: 1500px) {
+    .loginsignup-container{
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .loginsignup-container{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .loginsignup-container{
+        width: 60%;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .loginsignup-container{
+        width: 90%;
+    }
+}

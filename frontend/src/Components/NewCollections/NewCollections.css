@@ -1,0 +1,83 @@
+.new-collections{
+    /* margin-top: 10vh; */
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+    align-items: center;
+    /* margin: 2rem 0; */
+}
+
+
+.new_collection_heading{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+}
+
+
+.new-collections h1{
+    color: #171717;
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+.new_collection_dash{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 6vh;
+}
+
+
+.new_collection_dash hr{
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background-color: #252525;
+}
+
+
+.collections{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+
+.collection_item{
+    margin: 5vh 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap; 
+    gap: 5rem 2rem;
+    justify-content: center;
+}
+
+
+
+/** ========================================  Start for the Responsive Code  ========================================= */
+@media screen and (max-width: 520px) {
+    .new_collection_dash {
+        display: none
+    }
+
+}
+
+
+@media screen and (max-width: 1000px) {
+    .new_collection_heading {
+        height: auto;
+    }
+}
+/** =========================================  End for the Responsive Code  ========================================== */

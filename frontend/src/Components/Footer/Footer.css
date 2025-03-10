@@ -1,0 +1,87 @@
+.footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    place-items: center;
+    width: 100%;
+    height: auto;
+    background-color: #72a5f580;
+    gap: 0.5rem;
+    padding: 4rem 0;
+
+}
+
+
+.panel{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.panel_upper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h4, p{
+    text-align: center;
+}
+
+/* .panel_info h2{
+    margin-top: 10px;
+} */
+
+.panel_lower{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.copyright{
+    display: flex;
+    justify-content: center;
+    padding: 4vh 0;
+    width: 100;
+    background-color: #72a5f580;
+}
+
+/* @media screen and (max-width: 1400px) {
+    .footer{
+        flex-direction: column;
+        justify-content: start;
+        height: auto;
+    }
+} */
+
+/*!  ================================================================================================================= */
+/*   !  Responsiveness in the Footer Section */
+/*!  ================================================================================================================= */
+
+@media screen and (max-width:1170px) {
+    h4{
+        font-size: 1.5rem;
+    }
+    p{
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .footer{
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: 3rem;
+    
+    & .panel{
+        height: auto;
+    }
+    }
+
+}
