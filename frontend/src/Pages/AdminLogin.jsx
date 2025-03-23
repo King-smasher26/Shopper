@@ -147,6 +147,14 @@ const AdminLogin = ({ onLoginSuccess, mode = "light" }) => {
             {loading ? "Signing In..." : "Sign In"}
           </button>
         </div>
+      <div className="bg-white text-black p-2 rounded shadow">
+            <span className="font-semibold">Admin Email:</span> 
+            <span className="ml-2">demoadmin@gmail.com</span>
+          </div>
+          <div className="bg-white text-black p-2 rounded shadow">
+            <span className="font-semibold">Admin Password:</span> 
+            <span className="ml-2">demopassword</span>
+          </div>  
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ const Product = (props) => {
   console.log(props.mode);
   return (
     <div>
-       <Breadcrum product = {product} mode = {props.mode}/>
+       {/* <Breadcrum product = {product} mode = {props.mode}/> */}
        <ProductDisplay product={product} mode={props.mode} />                
     </div>
   );

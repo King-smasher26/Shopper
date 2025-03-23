@@ -18,6 +18,8 @@ import { AnalysisChart } from "./Pages/AnalysisChart";
 import AdminPanel from "./Pages/AdminPanel";
 import AdminAddingPage from "./Pages/AdminAddingPage";
 import AdminLogin from "./Pages/AdminLogin";
+import OrderSuccess from "./Pages/OrderSuccess";
+import UserOrders from "./Pages/UserOrders";
 const App = () => {
   const [modes, setModes] = useState("white");
 
@@ -59,6 +61,8 @@ const App = () => {
       <Route path="/admin" element={<AdminPanel mode={modes}/>}  />                                                   
       <Route path="/adminAdding" element={<AdminAddingPage mode={modes}/>}  />                                                   
       <Route path="/adminLogin" element={<AdminLogin mode={modes}/>}  />                                                   
+      <Route path="/order-success/:orderId" element={<OrderSuccess mode={modes}/>}  />                                                   
+      <Route path="/orders" element={<UserOrders mode={modes}/>}  />                                                   
 
     </Routes>
     <Footer mode={modes} />

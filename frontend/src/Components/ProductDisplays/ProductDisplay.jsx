@@ -28,8 +28,8 @@ const ProductDisplay = (props) => {
                     <div className="productdisplay-right" style={{color: (props.mode === "black")?"white":"black"}}>
                             <h1 style={{color: (props.mode === "black")?"yellow":"black"}}>{product.ProductName}</h1>
                             <div className="productdisplay-right-prices">
-                                <div className="productdisplay-right-price-old"> ${product.Price} </div>
-                                <div className="productdisplay-right-price-new"> ${product.discountedPrice} </div>
+                                <div className="productdisplay-right-price-old"> ₹{product.Price} </div>
+                                <div className="productdisplay-right-price-new"> ₹{product.discountedPrice} </div>
                             </div>
 
                             <div className="productdisplay-right-description">
