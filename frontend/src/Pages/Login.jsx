@@ -4,7 +4,10 @@ import { useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import { ShopContext } from '../Context/ShopContext'
 const Login = (props) => {
+  const {fetchProfileData,setMyLogin} = useContext(ShopContext);
   const navigate = useNavigate();
   const changeBackground={
     backgroundColor : (props.mode === "black")?"#3A3B3C":"white",
@@ -26,6 +29,8 @@ const Login = (props) => {
     console.log('data is',data)
     axios.post(`${process.env.REACT_APP_API_URL}/Login`,data).then(()=>{
           setLoading(false);
+          fetchProfileData();
+          setMyLogin(true)
           navigate('/');
         }).catch((e)=>{
             setLoading(false);

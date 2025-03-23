@@ -20,8 +20,10 @@ import AdminAddingPage from "./Pages/AdminAddingPage";
 import AdminLogin from "./Pages/AdminLogin";
 import OrderSuccess from "./Pages/OrderSuccess";
 import UserOrders from "./Pages/UserOrders";
+import { useLocation } from "react-router-dom";
 const App = () => {
   const [modes, setModes] = useState("white");
+  const currentLocation = useLocation();  // Get the current route (renamed to avoid 'location' conflict)
 
   // const getModeFunction=(mode)=>{
   //   console.log(mode);
@@ -41,11 +43,32 @@ const App = () => {
     }
   }
   
+
+  // Routes where Navbar should be hidden
+  const hideNavbarRoutes = [
+    "/login",
+    "/signup",
+    "/adminlogin",
+    "/admin",  // Exact match for the /admin route
+    // "/orders", // Exact match for the /orders route
+  ];
+
+  // Check if the current route matches a dynamic route pattern
+  const isDynamicRoute = (path) => {
+    // Check for /order-success/:orderId
+    const orderSuccessPattern = /^\/order-success\/\d+/; // This will match "/order-success/:orderId" with numeric IDs
+    return orderSuccessPattern.test(path);
+  };
+
+  // Conditional rendering based on route
+  const shouldHideNavbar = hideNavbarRoutes.includes(currentLocation.pathname) || isDynamicRoute(currentLocation.pathname);
+
   return (
    <>
-   <Router>
-    <Navbar toggleMode={toggleMode}/>                                {/* By this Navbar is available in all the component  */}
+    {/* <Navbar toggleMode={toggleMode}/>                                By this Navbar is available in all the component  */}
+    {!shouldHideNavbar && <Navbar toggleMode={toggleMode} />}
     <Routes>
+
       <Route path="/" element={<Shop mode={modes}/>} />
       <Route path="/mens" element={<ShopCategory banner={men_banner} category="Mens" mode={modes}/>} />
       <Route path="/womens" element={<ShopCategory banner={women_banner} category="Women" mode={modes} />} />
@@ -66,7 +89,6 @@ const App = () => {
 
     </Routes>
     <Footer mode={modes} />
-   </Router>
 
    {/* {document.body.style.backgroundColor="#042743"} */}
    </>

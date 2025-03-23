@@ -50,7 +50,7 @@
 
 // export default Shop;
 
-import React from "react";
+import React, { useEffect } from "react";
 import Hero from "../Components/Hero/Hero";
 import Item from "../Components/Items/Item";
 import Popular from "../Components/Popular/Popular";
@@ -58,13 +58,12 @@ import Offers from "../Components/Offers/Offers";
 import NewCollections from "../Components/NewCollections/NewCollections";
 import Newsletter from "../Components/Newsletter/Newsletter";
 import DemoCredentials from "./DemoCredentials";
-
+import { useContext } from "react";
+import { ShopContext } from "../Context/ShopContext";
 const Shop = (props) => {
   console.log('props at shop', props.mode);
-  console.log("mode at shop is", props.mode);
-  
+  console.log("mode at shop is", props.mode);  
   const gitRepoUrl = "https://github.com/King-smasher26/Shopper";
-  
   return (
     <>
       <DemoCredentials gitRepoUrl={gitRepoUrl} />

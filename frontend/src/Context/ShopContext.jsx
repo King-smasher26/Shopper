@@ -156,8 +156,8 @@
 import React, { createContext, useEffect, useState, useMemo } from "react";
 import all_product from "../Components/Images/all_product";
 import axios from "axios";
+import Cookies from 'js-cookie';
 export const ShopContext = createContext(null);
-
 const getDefaultCart = () => {
   let cart = {};
   for (let index = 0; index < all_product.length + 1; index++) {
@@ -173,29 +173,32 @@ const ShopContextProvider = (props) => {
   const [productDataArray, setProductDataArray] = useState([]);
   const [productItemArray, setProductItemArray] = useState([]);
   const [profileData, setProfileData] = useState(null); // State for profile data
-
+  const [accesscookie,setAccessCookie]=useState(null) 
+  const [mylogin,setMyLogin]=useState(false)
   axios.defaults.withCredentials = true;
-
-  // Fetch products
-  useMemo(() => {
-    return sendreq();
-  }, []);
-
+  // if(mycookie){
+    //   setAccessCookie(mycookie)
+    // }
+    // Fetch products
+    useMemo(() => {
+      return sendreq();
+    }, []);
   // Fetch profile data on initial load
   useEffect(() => {
-    const fetchProfileData = async () => {
-      try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/Profile`);
-        console.log("Profile data fetched in context:", response.data);
-        setProfileData(response.data);
-      } catch (error) {
-        console.log("Error fetching profile in context:", error);
-        setProfileData(null);
-      }
-    };
-    
     fetchProfileData();
   }, []); // Empty dependency array means this runs once when provider mounts
+  const fetchProfileData = async () => {
+    try {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/Profile`);
+      console.log("Profile data fetched in context:", response.data);
+      setProfileData(response.data);
+      setMyLogin(true)
+    } catch (error) {
+      console.log("Error fetching profile in context:", error);
+      setProfileData(null);
+      setMyLogin(false)
+    }
+  };
 
   async function sendreq() {
     console.log('fetching products')
@@ -313,6 +316,9 @@ const ShopContextProvider = (props) => {
     cartArrayLength,
     profileData, // Profile data in the context
     updateProfileData, // Function to update profile data
+    fetchProfileData,
+    mylogin,
+    setMyLogin
   };
 
   return (

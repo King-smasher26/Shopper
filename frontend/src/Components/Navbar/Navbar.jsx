@@ -280,12 +280,11 @@ import logo from "../Images/logo.png";
 import "./Navbar.css";
 
 const Navbar = (props) => {
-  const { cartArrayLength, profileData } = useContext(ShopContext);
+  const { cartArrayLength, profileData ,mylogin} = useContext(ShopContext);
   const [mode, setMode] = useState(props.mode || "light");
   const [val, setVal] = useState("shop");
   const [res_nav, setRes_Nav] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-
   let path = useLocation().pathname;
 
   // Check if we should hide the navbar
@@ -298,7 +297,14 @@ const Navbar = (props) => {
     else if (path === '/womens') setVal('women');
     else if (path === '/kids') setVal('kids');
   }, [path]);
-
+  useEffect(()=>{
+    console.log('we triggered useEffect mylogin on navbar',mylogin)
+    // if(profileData==undefined||null||""){
+    //   console.log('setmylogin false')
+    // }else{
+    //   setMyLogin(true)
+    // }
+  },[mylogin])
   // Close dropdown when clicking outside
   useEffect(() => {
     const closeDropdown = () => setShowDropdown(false);
@@ -312,12 +318,11 @@ const Navbar = (props) => {
   useEffect(() => {
     setMode(props.mode);
   }, [props.mode]);
-
   // Function that actually returns the component or null
   if (isAdminPage) {
     return null;
   }
-
+  
   // Check if user is logged in based on profile data
   const isLoggedIn = profileData && profileData._id;
   const userName = isLoggedIn ? profileData.name || 'User' : '';
@@ -326,16 +331,16 @@ const Navbar = (props) => {
   
   // Get first letter of name for avatar
   const userInitial = userName ? userName.charAt(0).toUpperCase() : '';
-
+  
   // Toggle user dropdown
   const toggleDropdown = (e) => {
     e.stopPropagation();
     setShowDropdown(!showDropdown);
   };
-
+  
   // Toggle dark/light mode
   const toggleMode = () => {
-    const newMode = mode === "light" ? "dark" : "light";
+    const newMode = mode === "light" ? "black" : "light";
     setMode(newMode);
     props.toggleMode(newMode);
   };
@@ -450,7 +455,7 @@ const Navbar = (props) => {
           alignItems: "center", 
           gap: "1.5rem" 
         }}>
-          {isLoggedIn ? (
+          {mylogin==true ? (
             // User profile dropdown when logged in
             <div className="user-profile-container" style={{ position: 'relative' }}>
               <div 
@@ -534,13 +539,14 @@ const Navbar = (props) => {
                         backgroundColor: themeColors.hoverBg
                       }
                     }}
-                  >
+                    >
                     <Link to="/orders" style={{ textDecoration: 'none', color: themeColors.dropdownText, display: 'block' }}>
                       My Orders
                     </Link>
                   </div>
                   <div className="dropdown-divider" style={{ height: '1px', backgroundColor: themeColors.divider, margin: '4px 0' }}></div>
                   <div 
+                    onClick={LogOut} 
                     className="dropdown-item" 
                     style={{ 
                       padding: '10px 16px', 
@@ -552,7 +558,6 @@ const Navbar = (props) => {
                     }}
                   >
                     <button 
-                      onClick={LogOut} 
                       className='logout-btn' 
                       style={{ 
                         color: "#ff4757", 
