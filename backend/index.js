@@ -88,7 +88,7 @@ app.post('/Login', async (req, res) => {
                     console.log('password match')
                     const accessToken = createTokens(user)
                     res.cookie("access-token", accessToken, {
-                        maxAge: 60 * 60 * 24 * 30 * 1000,
+                        maxAge: 60 * 60 * 24 * 7 * 1000,
                         httpOnly: false,
                         secure: true, // For HTTPS
                         sameSite: 'none', // Important for cross-site requests
@@ -111,7 +111,7 @@ app.post('/Login', async (req, res) => {
 
 })
 
-app.get('/Profile', validateToken, (req, res) => {
+app.get('/Profile', validateToken, (req, res) => {  
     res.json(req.user)
 })
 app.get('/AdminProfile', validateAdmin, (req, res) => {
